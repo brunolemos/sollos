@@ -1,14 +1,7 @@
 <template name="MenuTemplate">
-	<nav id="main-menu" role="navigation">
-		<ul>
-			<li><a href="{{pathFor 'home'}}">Coopera.Me</a></li>
-
-			{{#if currentUser}}
-				<li><a href="{{pathFor 'me'}}">Meus pedidos</a></li>
-				<li><a href="{{pathFor 'logout'}}">Sair ({{currentUser.profile.name}})</a></li>
-			{{else}}
-					<li>{{> loginButtons}}</li>
-			{{/if}}
-		</ul>
-	</nav>
+	<div class="bar bar-header bar-calm">
+		<button class="button icon ion-navicon"></button>
+		<a href="{{pathFor 'home'}}" class="title">Produtos</a>
+		<a href="{{pathFor 'profile'}}" class="button button-clear">Perfil</a>
+	</div>
 </template>
