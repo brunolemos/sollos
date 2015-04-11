@@ -4,12 +4,6 @@
 				<h1>Produtos</h1>
 		</header>
 
-		<section>
-			<ul>
-				{{#each products}}
-				<li>{{name}} ({{preco}})</li>
-				{{/each}}
-			</ul>
-		</section>
+		{{> ProductsTemplate products=products}}
 	</section>
 </template>

@@ -1,0 +1,11 @@
+<template name="ProductsTemplate">
+	<section id="products">
+		<ul>
+			{{#each products}}
+				<li>
+					<a href="{{pathFor route='product.show'}}">{{name}} ({{preco}})</a>
+				</li>
+			{{/each}}
+		</ul>
+	</section>
+</template>
