@@ -3,3 +3,7 @@ UI.registerHelper('canRemoveProduct', function(product) {
 	
 	return product.createdBy == Meteor.userId();
 });
+
+UI.registerHelper('formatPrice', function(price) {
+	return price.toFixed(2);
+});
