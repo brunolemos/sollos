@@ -1,9 +1,14 @@
 <template name="ProductsTemplate">
 	<section id="products">
-		<ul>
+		<a href="{{pathFor 'product.new'}}">Novo</a>
+
+		<ul id="productList">
 			{{#each products}}
 				<li>
-					<a href="{{pathFor route='product.show'}}">{{name}} ({{price}})</a>
+					<a href="{{pathFor 'product.show'}}">{{name}} ({{price}})</a>
+					{{#if canRemoveProduct this}}
+						(<a href="#" class="remove">remove</a>)
+					{{/if}}
 				</li>
 			{{/each}}
 		</ul>

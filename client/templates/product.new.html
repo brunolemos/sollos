@@ -1,0 +1,11 @@
+<template name="NewProductTemplate">
+	<section id="newproduct">
+		<h2>Novo produto</h2>
+		
+		<form>
+			<input type="text" name="name" required />
+			<input type="number" name="price" required pattern="^\d+(\.|\,)\d{2}$"/>
+			<button>Cadastrar</button>
+		</form>
+	</section>
+</template>
