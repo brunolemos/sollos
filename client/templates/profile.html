@@ -1,0 +1,8 @@
+<template name="ProfileTemplate">
+	{{#if currentUser}}
+		<li><a href="{{pathFor 'me'}}">Meus pedidos</a></li>
+		<li><a href="{{pathFor 'logout'}}">Sair ({{currentUser.profile.name}})</a></li>
+	{{else}}
+		<li>{{> loginButtons}}</li>
+	{{/if}}
+</template>
