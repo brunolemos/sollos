@@ -9,5 +9,7 @@ autopublish
 insecure
 iron:router
 accounts-facebook
-ian:accounts-ui-bootstrap-3
 twbs:bootstrap
+fourseven:scss
+meteoric:ionic-sass
+meteoric:ionicons-sass
