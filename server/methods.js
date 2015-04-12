@@ -1,9 +1,5 @@
 Meteor.methods({
 	buyProduct: function(data, product) {
-		console.log("data");
-		console.log(data);
-		console.log("product");
-		console.log(product);
 		var Simplify = Meteor.npmRequire("simplify-commerce"),
 
 		client = Simplify.getClient({
@@ -12,20 +8,34 @@ Meteor.methods({
 		});
 		
 		client.payment.create({
-				amount : "1000",
+				amount : product.price * 100,
 				token : data.id,
 				description : product.name,
-				reference : "7a6ef6be31",
-				currency : "BRL"
+				currency : "USD"
 			}, function(errData, data) {
 		
 			if(errData) {
+				console.log(errData.data.error.fieldErrors);
 				console.error("Error Message: " + errData.data.error.message);
 				// handle the error
 				return;
 			}
 			
 			console.log("Payment Status: " + data.paymentStatus);
+
+			//save transaction
+			var transaction = {};
+			transaction.userId = Meter.userId();
+			transaction.itemCount = 1;
+			transaction.totalPrice = product.price;
+			transaction.productId = product._id;
+			transaction.cooperativeId = product.cooperativeId;
+			transaction.paymentStatus = data.paymentStatus;
+			transaction.card = data.card;
+
+			var transactionId = Transactions.insert(transaction);
+
+			Session.set('TransactionId', transactionId);
 		});
 	}
 });

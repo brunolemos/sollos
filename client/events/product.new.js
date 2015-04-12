@@ -8,6 +8,10 @@ Template.NewProductTemplate.events({
 	    data.createdBy = Meteor.userId();
 	    data.createdAt = new Date();
 
+	    //default data
+	    data.image = "default.png";
+	    data.cooperativeId = Cooperatives.find({}, {$limit: 1}).fetch()[0]._id;
+
 	    if(data.name == '' || data.price < 0) return false;
 
     	Products.insert(data, function(error, result) {

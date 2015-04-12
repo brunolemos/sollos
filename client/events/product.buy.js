@@ -1,6 +1,10 @@
+var product;
+
 Template.BuyProductTemplate.events({
 	'submit form': function(e, template) {
 			e.preventDefault();
+
+      product = this;
 
       var card = {};
       card.number = $("#cc-number").val().replace(/[^0-9.]/g, "");
@@ -37,10 +41,15 @@ function simplifyResponseHandler(data) {
             var fieldErrors = data.error.fieldErrors,
                 fieldErrorsLength = fieldErrors.length,
                 errorList = "";
+
             for (var i = 0; i < fieldErrorsLength; i++) {
-                errorList += "<div class='error'>Field: '" + fieldErrors[i].field +
-                             "' is invalid - " + fieldErrors[i].message + "</div>";
+                errorList += "<li class='item error'>Field: '" + fieldErrors[i].field +
+                             "' is invalid - " + fieldErrors[i].message + "</li>";
             }
+
+            if(errorList != "")
+              errorList = '<ul class="list">' + errorList + '</ul>';
+
             // Display the errors
             $paymentForm.after(errorList);
         }
@@ -54,6 +63,6 @@ function simplifyResponseHandler(data) {
         
         // Submit the form to the server
         // $paymentForm.get(0).submit();
-        Meteor.call('buyProduct', data, this);
+        Meteor.call('buyProduct', data, product);
     }
 }
