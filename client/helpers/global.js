@@ -11,7 +11,7 @@ UI.registerHelper('fruitImage', function(imageFileUrl) {
 });
 
 UI.registerHelper('cooperativeImage', function(imageFileUrl) {
-	return "/img/cooperative/" + imageFileUrl;
+	return "/img/cooperatives/" + imageFileUrl;
 });
 
 /* PERMISSION */

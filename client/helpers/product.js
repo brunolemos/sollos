@@ -6,4 +6,8 @@ Template.ProductTemplate.helpers({
 	purchasedCount: function() {
 		return "100+";
 	},
+
+	getCooperative: function(cooperativeId) {
+		return Cooperatives.findOne(cooperativeId);
+	}
 });

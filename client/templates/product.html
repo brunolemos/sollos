@@ -1,14 +1,19 @@
 <template name="ProductTemplate">
 	<section id="product">
 		<div class="list card">
-			<div class="item item-avatar">
-				<img src="{{fruitImage image}}">
-				<h2>{{name}}</h2>
-				<p>R${{formatPrice price}}</p>
-			</div>
+			<a href="{{pathFor 'cooperative.show'}}" class="title">
+				<div class="item item-avatar cooperativeBody">
+					{{#with getCooperative cooperativeId}}
+					<img src="{{cooperativeImage image}}">
+					<h2>{{name}}</h2>
+					<p>{{address}}</p>
+					{{/with}}
+				</div>
+			</a>
 
-			<div class="item item-body">
+			<div class="item item-body productBody">
 				<img class="full-image" src="{{fruitImage image}}">
+				<h2>{{name}}</h2>
 				<p>{{description}}</p>
 				<p>
 					{{#if isHot}}

@@ -7,20 +7,15 @@
 			</div>
 
 			<div class="item item-body">
-				<img class="full-image" src="{{fruitImage image}}">
+				<img class="full-image" src="{{cooperativeImage image}}">
 				<p>{{description}}</p>
-				<p>
-					{{#if isHot}}
-					<i class="icon ion-fireball inFlames"></i>
-					{{/if}}
-					<span class="subdued">{{purchasedCount}} pessoas já compraram</span>
-				</p>
 			</div>
 		</div>
 
 		<div class="bar bar-footer bar-balanced">
-			<a href="{{pathFor 'product.buy'}}" class="title">
-				<span>Comprar por R${{formatPrice price}}</span>
+			<a href="{{pathFor 'products'}}" class="title">
+				<i class="icon ion-leaf"></i>
+				<span>Ver produtos</span>
 			</a>
 		</div>
 	</section>
