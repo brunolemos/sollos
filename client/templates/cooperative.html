@@ -1,5 +1,5 @@
 <template name="CooperativeTemplate">
-	<section id="product">
+	<section id="cooperative">
 		<div class="list card">
 			<div class="item item-avatar">
 				<img src="{{cooperativeImage image}}">
@@ -7,9 +7,13 @@
 			</div>
 
 			<div class="item item-body">
-				<img class="full-image" src="{{cooperativeImage image}}">
+				<img class="full-image" src="{{cooperativeImage cover}}">
 				<p>{{description}}</p>
 			</div>
+		</div>
+
+		<div class="map-container">
+			{{> googleMap name="exampleMap" options=exampleMapOptions}}
 		</div>
 
 		<div class="bar bar-footer bar-balanced">

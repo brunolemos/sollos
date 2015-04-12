@@ -12,7 +12,7 @@ Meteor.startup(function () {
 		var cooperativeId = Cooperatives.insert({name: "Cooperativa COAF", image: "logo_coaf.png", cover: "240514-coaf-brasil", "description": "Nossa missão é entregar os melhores produtos para os melhores consumidores.", "address": "Rua Francisco de Paula, 445"});
 	}
 	
-	if(Cooperatives.find().count() <= 0) {
+	if(Products.find().count() <= 0) {
 		Products.remove({});
   	Products.insert({name: "Abacaxi", price: 2.99, image: "pineapples.jpg", "cooperativeId": cooperativeId});
   	Products.insert({name: "Alface", price: 0.79, image: "lettuce.jpg", "cooperativeId": cooperativeId});
