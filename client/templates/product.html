@@ -12,10 +12,8 @@
 				<p>{{description}}</p>
 				<p>
 					{{#if isHot}}
-					<span class="inFlames ion ion-ios-flame"></span>
+					<i class="icon ion-fireball inFlames"></i>
 					{{/if}}
-
-		    	<i class="icon ion-fireball hot"></i>
 					<span class="subdued">{{purchasedCount}} pessoas já compraram</span>
 				</p>
 			</div>
@@ -23,7 +21,7 @@
 
 		<div class="bar bar-footer bar-balanced">
 		  <a href="{{pathFor 'product.buy'}}" class="title">
-					<!-- <i class="icon ion-social-usd"></i> -->
+				<!-- <i class="icon ion-social-usd"></i> -->
 		  		Comprar por R${{formatPrice price}}
 		  </a>
 		</div>

@@ -24,7 +24,7 @@ a {
 }
 
 #product .inFlames {
-	color: #FF6600;
+	color: #e5104d;
 	font-size: 120%;
 }
 
@@ -76,10 +76,14 @@ a {
 	background-color: white;
 }
 
+#newproduct form {
+	background-color: white;
+}
+
 #newproduct .description {
 	min-height: 200px;
 }
 
-.hot {
-	color: #e5104d;
+#payment form {
+	background-color: white;
 }
