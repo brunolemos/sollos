@@ -1,15 +1,15 @@
 <template name="ProductTemplate">
 	<section id="product">
 		<div class="list card">
+			{{#with getCooperative cooperativeId}}
 			<a href="{{pathFor 'cooperative.show'}}" class="title">
 				<div class="item item-avatar cooperativeBody">
-					{{#with getCooperative cooperativeId}}
 					<img src="{{cooperativeImage image}}">
 					<h2>{{name}}</h2>
 					<p>{{address}}</p>
-					{{/with}}
 				</div>
 			</a>
+			{{/with}}
 
 			<div class="item item-body productBody">
 				<img class="full-image" src="{{fruitImage image}}">
