@@ -1,5 +1,4 @@
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionic-sass/ionic';
-
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionicons-sass/ionicons';
 
 html, body {
@@ -12,6 +11,7 @@ body {
 
 #main {
 	padding: 40px 0;
+<<<<<<< HEAD
 }
 
 #productList .list {
@@ -31,3 +31,6 @@ body {
 #newproduct .description {
 	min-height: 200px;
 }
+=======
+}
+>>>>>>> origin/master
