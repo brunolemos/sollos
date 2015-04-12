@@ -4,30 +4,26 @@
 
 		<ul id="productList">
 			{{#each products}}
-				<li>
-					<div class="list card">
+			<li>
+				<div class="list card">
+					<a href="{{pathFor 'payment'}}">
+						<div class="item item-avatar">
+							<img src="avatar.jpg">
+							<h2>{{name}}</h2>
+							<p>R${{formatPrice price}}</p>
+						</div>
+					</a>
 
-					  <div class="item item-avatar">
-					    <img src="avatar.jpg">
-					    <h2>Pretty Hate Machine</h2>
-					    <p>Nine Inch Nails</p>
-					  </div>
+					<a class="item item-icon-left assertive" href="{{pathFor 'product.show'}}">
+						<i class="icon ion-social-usd"></i>
+						<span>Comprar</span>
+					</a>
 
-					  <div class="item item-image">
-					    <img src="cover.jpg">
-					  </div>
-
-					  <a class="item item-icon-left assertive" href="#">
-					    <i class="icon ion-music-note"></i>
-					    <span>R${{formatPrice price}}</span>
-					  </a>
-
-					</div>
-					<a href="{{pathFor 'product.show'}}">{{name}} ({{price}})</a>
 					{{#if canRemoveProduct this}}
-						(<a href="#" class="remove">remove</a>)
+					(<a href="#" class="remove">remove</a>)
 					{{/if}}
-				</li>
+				</div>
+			</li>
 			{{/each}}
 		</ul>
 	</section>
