@@ -7,7 +7,7 @@ Meteor.startup(function () {
 		}
 	});
 
-	if (true || Cooperatives.find().count() <= 0) {
+	if (Cooperatives.find().count() <= 0) {
 		Cooperatives.remove({});
 		var cooperativeId = Cooperatives.insert({name: "Cooperativa COAF", image: "logo_coaf.png", cover: "240514-coaf-brasil.jpg", "description": "Constituída em 2003 por 60 pequenos agricultores da região de Bebedouro, com objetivo de comercializar a produção de verduras e legumes, conseqüentemente garantir melhores preços e capacidade de negociação.", address: "Rua Francisco de Paula, 445 Bebedouro São Paulo"});
 		Cooperatives.insert({name: "Sítio Pé na Terra", image: "sitio_pe_na_terra.png", cover: "sitio_pe_na_terra.jpg", "description": "O Sítio Pé na Terra tem como principal foco a natureza. A consciência ecológica e humana são as bases do nosso trabalho, Seja nas visitações de grupos, nos cursos que sediamos ou nos alimentos orgânicos oferecidos.", address: "Rua Carlos Arthur Scherer, 2085, Lomba Grande, Novo Hamburgo/RS"});
