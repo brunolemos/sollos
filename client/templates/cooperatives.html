@@ -1,0 +1,17 @@
+<template name="CooperativesTemplate">
+	<section id="cooperatives">
+		<ul>
+			{{#each this}}
+			<div class="list">
+
+			    <a href="{{pathFor 'cooperative.show'}}" class="item item-thumbnail-left">
+					<img src="{{cooperativeImage image}}">
+					<h2>{{name}}</h2>
+					<p>{{address}}</p>
+			    </a>
+
+			</div>
+			{{/each}}
+		</ul>
+	</section>
+</template>
