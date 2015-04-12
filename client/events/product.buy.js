@@ -2,18 +2,21 @@ Template.BuyProductTemplate.events({
 	'submit form': function(e, template) {
 			e.preventDefault();
 
+      var card = {};
+      card.number = $("#cc-number").val().replace(/[^0-9.]/g, "");
+      card.cvc = $("#cc-cvc").val();
+      card.expMonth = $("#cc-exp-month").val();
+      card.expYear = $("#cc-exp-year").val();
+
+      if(card.number == '' || card.cvc == '' || !(card.expMonth >= 1 && card.expMonth <= 12) || !card.expYear >= 2015) return false;
+
 			// Disable the submit button
       $("#process-payment-btn").attr("disabled", "disabled");
 
       // Generate a card token & handle the response
       SimplifyCommerce.generateToken({
           key: "sbpb_ZWI2NjU4OTctMGJhYy00ODA4LWE1MjgtNzA1ZGIwYzM1OTY2",
-          card: {
-              number: $("#cc-number").val(),
-              cvc: $("#cc-cvc").val(),
-              expMonth: $("#cc-exp-month").val(),
-              expYear: $("#cc-exp-year").val()
-          }
+          card: card
       }, simplifyResponseHandler);
 
 			// Prevent the form from submitting
@@ -48,8 +51,9 @@ function simplifyResponseHandler(data) {
         var token = data["id"];
         // Insert the token into the form so it gets submitted to the server
         $paymentForm.append("<input type='hidden' name='simplifyToken' value='" + token + "' />");
+        
         // Submit the form to the server
         // $paymentForm.get(0).submit();
-        alert("Sucesso!");
+        Meteor.call('buyProduct', data, this);
     }
 }

@@ -8,6 +8,8 @@ Template.NewProductTemplate.events({
 	    data.createdBy = Meteor.userId();
 	    data.createdAt = new Date();
 
+	    if(data.name == '' || data.price < 0) return false;
+
     	Products.insert(data, function(error, result) {
     		if(error) 
     			alert(error.reason) 

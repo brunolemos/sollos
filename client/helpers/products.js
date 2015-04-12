@@ -1,4 +1,4 @@
-Template.home_logged.helpers({
+Template.ProductsTemplate.helpers({
 	products: function() {
 		return Products.find();
 	},

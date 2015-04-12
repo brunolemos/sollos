@@ -1,8 +1,40 @@
 <template name="ProfileTemplate">
 	{{#if currentUser}}
-		<li><a href="{{pathFor 'me'}}">Meus pedidos</a></li>
-		<li><a href="{{pathFor 'logout'}}">Sair ({{currentUser.profile.name}})</a></li>
+		<header>
+			<img id="avatar" src="{{facebookAvatar currentUser}}"/>
+			<h2 class="profileName">{{currentUser.profile.name}}</h2>
+		</header>
+
+		<div class="list">
+
+		  <a class="item item-icon-left" href="#">
+		    <i class="icon ion-grid"></i>
+		    Meus pedidos
+		  </a>
+
+		  <a class="item item-icon-left" href="#">
+		    <i class="icon ion-bookmark"></i>
+		    Lista de desejos
+		  </a>
+
+		  <a class="item item-icon-left" href="#">
+		    <i class="icon ion-heart"></i>
+		    Empreiteiras favoritas
+		  </a>
+
+		  <a class="item item-icon-left" href="#">
+		    <i class="icon ion-gear-b"></i>
+		    Configurações
+		  </a>
+		</div>
+
+		<div class="bar bar-footer bar-assertive">
+		  <a href="{{pathFor 'logout'}}" class="title">
+					<i class="icon ion-log-out"></i>
+		  		Logout
+		  </a>
+		</div>
 	{{else}}
-		<li>{{> loginButtons}}</li>
+		{{> loginButtons}}
 	{{/if}}
 </template>

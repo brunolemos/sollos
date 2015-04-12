@@ -1,31 +1,31 @@
 <template name="ProductTemplate">
 	<section id="product">
 		<div class="list card">
-
 			<div class="item item-avatar">
-				<img src="/img/{{image}}">
+				<img src="{{fruitImage image}}">
 				<h2>{{name}}</h2>
-				<p>{{farmerName}}</p>
+				<p>R${{formatPrice price}}</p>
 			</div>
 
 			<div class="item item-body">
-				<img class="full-image" src="/img/{{image}}">
+				<img class="full-image" src="{{fruitImage image}}">
 				<p>{{description}}</p>
 				<p>
 					{{#if isHot}}
 					<span class="inFlames ion ion-ios-flame"></span>
 					{{/if}}
-					<span class="subdued">{{numberBuyers}} pessoas já compraram</span>
+
+		    	<i class="icon ion-fireball hot"></i>
+					<span class="subdued">{{purchasedCount}} pessoas já compraram</span>
 				</p>
 			</div>
+		</div>
 
-			<div class="item">
-				<a class="item item-icon-left assertive" href="{{pathFor 'product.buy'}}">
-					<i class="icon ion-social-usd"></i>
-					<span>Comprar</span>
-				</a>
-			</div>
-
+		<div class="bar bar-footer bar-balanced">
+		  <a href="{{pathFor 'product.buy'}}" class="title">
+					<!-- <i class="icon ion-social-usd"></i> -->
+		  		Comprar por R${{formatPrice price}}
+		  </a>
 		</div>
 	</section>
 </template>

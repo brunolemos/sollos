@@ -1,0 +1,11 @@
+@import '.meteor/local/build/programs/server/assets/packages/meteoric_ionic-sass/ionic';
+@import '.meteor/local/build/programs/server/assets/packages/meteoric_ionicons-sass/ionicons';
+
+.bar-footer {
+	position: fixed;
+}
+
+.bar.bar-balanced.bar-footer {
+	background: #3a942a;
+	border-color: #2c7a1e;
+}

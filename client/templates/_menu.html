@@ -1,7 +1,13 @@
 <template name="MenuTemplate">
 	<div class="bar bar-header bar-calm">
+		{{#if currentUser}}
 		<a href="{{pathFor 'home'}}" class="button button-clear">Produtos</a>
-		<h1 class="title">Sollos</h1>
+		{{/if}}
+		
+		<h1 class="title"><a href="{{pathFor 'home'}}">Sollos</a></h1>
+		
+		{{#if currentUser}}
 		<a href="{{pathFor 'profile'}}" class="button button-clear">Perfil</a>
+		{{/if}}
 	</div>
 </template>

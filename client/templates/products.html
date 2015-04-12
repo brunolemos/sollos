@@ -1,11 +1,10 @@
 <template name="ProductsTemplate">
 	<section id="products">
-
 		<ul id="productList">
 			{{#each products}}
 			<li class="ball">
 				<a href="{{pathFor 'product.show'}}">
-					<img src="/img/{{image}}">
+					<img src="{{fruitImage image}}">
 					<p class="name">{{name}}</p>
 					<p class="price">R${{formatPrice price}}</p>
 				</a>
@@ -16,7 +15,12 @@
 			</li>
 			{{/each}}
 		</ul>
-
-		<a href="{{pathFor 'product.new'}}" class="button button-full button-balanced">Novo Produto</a>
+		
+		<div class="bar bar-footer bar-balanced">
+		  <a href="{{pathFor 'product.new'}}" class="title">
+					<i class="icon ion-plus-round"></i>
+		  		Novo Produto
+		  </a>
+		</div>
 	</section>
 </template>

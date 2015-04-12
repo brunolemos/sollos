@@ -1,5 +1,5 @@
-@import '.meteor/local/build/programs/server/assets/packages/meteoric_ionic-sass/ionic';
-@import '.meteor/local/build/programs/server/assets/packages/meteoric_ionicons-sass/ionicons';
+@import 'ionic';
+@import 'pages/landing';
 
 html, body {
 	overflow: visible !important;
@@ -7,10 +7,20 @@ html, body {
 
 body {
 	font-family: 'Roboto', sans-serif;
+	background-color: #F5F5F5;
+}
+
+a {
+	text-decoration: none;
+}
+
+#app-header > .bar {
+	background: #e5104d;
+	border-color: #ca0a41;
 }
 
 #main {
-	padding: 40px 0;
+	padding: 60px 0;
 }
 
 #product .inFlames {
@@ -68,4 +78,8 @@ body {
 
 #newproduct .description {
 	min-height: 200px;
+}
+
+.hot {
+	color: #e5104d;
 }
