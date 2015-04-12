@@ -1,31 +1,33 @@
 <template name="ProductTemplate">
 	<section id="product">
 		<div class="list card">
-			<div class="item item-avatar">
-				<img src="{{fruitImage image}}">
-				<h2>{{name}}</h2>
-				<p>R${{formatPrice price}}</p>
-			</div>
+			{{#with getCooperative cooperativeId}}
+			<a href="{{pathFor 'cooperative.show'}}" class="title">
+				<div class="item item-avatar cooperativeBody">
+					<img src="{{cooperativeImage image}}">
+					<h2>{{name}}</h2>
+					<p>{{address}}</p>
+				</div>
+			</a>
+			{{/with}}
 
-			<div class="item item-body">
+			<div class="item item-body productBody">
 				<img class="full-image" src="{{fruitImage image}}">
+				<h2>{{name}}</h2>
 				<p>{{description}}</p>
 				<p>
 					{{#if isHot}}
-					<span class="inFlames ion ion-ios-flame"></span>
+					<i class="icon ion-fireball inFlames"></i>
 					{{/if}}
-
-		    	<i class="icon ion-fireball hot"></i>
 					<span class="subdued">{{purchasedCount}} pessoas já compraram</span>
 				</p>
 			</div>
 		</div>
 
 		<div class="bar bar-footer bar-balanced">
-		  <a href="{{pathFor 'product.buy'}}" class="title">
-					<!-- <i class="icon ion-social-usd"></i> -->
-		  		Comprar por R${{formatPrice price}}
-		  </a>
+			<a href="{{pathFor 'product.buy'}}" class="title">
+				<span>Comprar por R${{formatPrice price}}</span>
+			</a>
 		</div>
 	</section>
 </template>

@@ -1,0 +1,22 @@
+<template name="CooperativeTemplate">
+	<section id="product">
+		<div class="list card">
+			<div class="item item-avatar">
+				<img src="{{cooperativeImage image}}">
+				<h2>{{name}}</h2>
+			</div>
+
+			<div class="item item-body">
+				<img class="full-image" src="{{cooperativeImage image}}">
+				<p>{{description}}</p>
+			</div>
+		</div>
+
+		<div class="bar bar-footer bar-balanced">
+			<a href="{{pathFor 'products'}}" class="title">
+				<i class="icon ion-leaf"></i>
+				<span>Ver produtos</span>
+			</a>
+		</div>
+	</section>
+</template>
