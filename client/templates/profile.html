@@ -1,40 +1,35 @@
 <template name="ProfileTemplate">
 	{{#if currentUser}}
-		<header>
-			<img id="avatar" src="{{facebookAvatar currentUser}}"/>
-			<h2 class="profileName">{{currentUser.profile.name}}</h2>
-		</header>
+	<header>
+		<img id="avatar" src="{{facebookAvatar currentUser}}"/>
+		<h2 class="profileName">{{currentUser.profile.name}}</h2>
+	</header>
 
-		<div class="list">
+	<div class="list">
 
-		  <a class="item item-icon-left" href="#">
-		    <i class="icon ion-grid"></i>
-		    Meus pedidos
-		  </a>
+		<a class="item item-icon-left" href="{{pathFor 'products'}}">
+			<i class="icon ion-leaf"></i>
+			<span>Meus pedidos</span>
+		</a>
 
-		  <a class="item item-icon-left" href="#">
-		    <i class="icon ion-bookmark"></i>
-		    Lista de desejos
-		  </a>
+		<a class="item item-icon-left" href="{{pathFor 'cooperatives'}}">
+			<i class="icon ion-ios-home"></i>
+			<span>Cooperativas favoritas</span>
+		</a>
 
-		  <a class="item item-icon-left" href="#">
-		    <i class="icon ion-heart"></i>
-		    Empreiteiras favoritas
-		  </a>
+		<a class="item item-icon-left" href="#">
+			<i class="icon ion-gear-b"></i>
+			<span>Configurações</span>
+		</a>
+	</div>
 
-		  <a class="item item-icon-left" href="#">
-		    <i class="icon ion-gear-b"></i>
-		    Configurações
-		  </a>
-		</div>
-
-		<div class="bar bar-footer bar-assertive">
-		  <a href="{{pathFor 'logout'}}" class="title">
-					<i class="icon ion-log-out"></i>
-		  		Logout
-		  </a>
-		</div>
+	<div class="bar bar-footer bar-assertive">
+		<a href="{{pathFor 'logout'}}" class="title">
+			<i class="icon ion-log-out"></i>
+			Logout
+		</a>
+	</div>
 	{{else}}
-		{{> loginButtons}}
+	{{> loginButtons}}
 	{{/if}}
 </template>
