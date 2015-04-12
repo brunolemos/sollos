@@ -36,5 +36,12 @@ Meteor.methods({
 			
 			Transactions.insert(transaction);
 		});
+	},
+
+	geoCode: function(address) {
+		var geo = new GeoCoder();
+		var result = geo.geocode(address);
+		
+		return result;
 	}
 });
