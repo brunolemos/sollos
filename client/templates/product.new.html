@@ -1,11 +1,19 @@
 <template name="NewProductTemplate">
 	<section id="newproduct">
-		<h2>Novo produto</h2>
-		
 		<form>
-			<input type="text" name="name" required />
-			<input type="number" name="price" required pattern="^\d+(\.|\,)\d{2}$"/>
-			<button>Cadastrar</button>
+			<label class="item item-input item-stacked-label">
+				<span class="input-label">Nome</span>
+			    <input type="text" name="name" placeholder="Nome do produto">
+		  	</label>
+		  	<label class="item item-input item-stacked-label">
+		  		<span class="input-label">Preço</span>
+			    <input type="text" name="price" placeholder="R$ 0,00">
+		  	</label>
+		  	<label class="item item-input item-stacked-label">
+		  		<span class="input-label">Descrição</span>
+			    <textarea class="description" name="description" placeholder="Descrição completa"></textarea>
+		  	</label>
+			<button class="button button-full button-balanced">Cadastrar Produto</button>
 		</form>
 	</section>
 </template>

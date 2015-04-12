@@ -1,30 +1,31 @@
 <template name="ProductsTemplate">
 	<section id="products">
-		<a href="{{pathFor 'product.new'}}">Novo</a>
 
 		<ul id="productList">
 			{{#each products}}
 			<li>
 				<div class="list card">
-					<a href="{{pathFor 'payment'}}">
+					<a href="{{pathFor 'product.show'}}">
 						<div class="item item-avatar">
-							<img src="avatar.jpg">
+							<img src="/img/{{image}}">
 							<h2>{{name}}</h2>
 							<p>R${{formatPrice price}}</p>
 						</div>
 					</a>
 
-					<a class="item item-icon-left assertive" href="{{pathFor 'product.show'}}">
+					<a class="item item-icon-left assertive" href="{{pathFor 'payment'}}">
 						<i class="icon ion-social-usd"></i>
 						<span>Comprar</span>
 					</a>
 
 					{{#if canRemoveProduct this}}
-					(<a href="#" class="remove">remove</a>)
+					<a href="#" class="ion ion-ios-trash"></a>
 					{{/if}}
 				</div>
 			</li>
 			{{/each}}
 		</ul>
+
+		<a href="{{pathFor 'product.new'}}" class="button button-full button-balanced">Novo Produto</a>
 	</section>
 </template>

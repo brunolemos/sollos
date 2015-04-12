@@ -2,6 +2,10 @@
 
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionicons-sass/ionicons';
 
+html, body {
+	overflow: visible !important;
+}
+
 body {
 	font-family: 'Roboto', sans-serif;
 }
@@ -10,3 +14,20 @@ body {
 	padding: 40px 0;
 }
 
+#productList .list {
+	overflow: visible;
+	position: relative;
+}
+
+#productList .remove {
+	position: absolute;
+	top: -8px;
+	right: -8px;
+	font-size: 200%;
+	z-index: 10;
+	color: #333;
+}
+
+#newproduct .description {
+	min-height: 200px;
+}

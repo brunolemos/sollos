@@ -3,24 +3,24 @@
 		<div class="list card">
 
 		  <div class="item item-avatar">
-		    <img src="{{farmerImage}}.jpg">
+		    <img src="/img/{{image}}">
 		    <h2>{{name}}</h2>
 		    <p>{{farmerName}}</p>
 		  </div>
 
 		  <div class="item item-body">
-		    <img class="full-image" src="{{productImage}}.jpg">
+		    <img class="full-image" src="/img/{{image}}">
 		    <p>{{description}}</p>
 		    <p>
 		      <a href="#" class="subdued">50 compras</a>
 		    </p>
 		  </div>
 
-		  <div class="item tabs tabs-secondary tabs-icon-left">
-		    <a class="tab-item" href="#">
-		      <i class="icon ion-social-usd"></i>
-		      <span>Comprar</span>
-		    </a>
+		  <div class="item">
+		    <a class="item item-icon-left assertive" href="{{pathFor 'payment'}}">
+				<i class="icon ion-social-usd"></i>
+				<span>Comprar</span>
+			</a>
 		  </div>
 
 		</div>
