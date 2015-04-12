@@ -43,7 +43,7 @@ function simplifyResponseHandler(data) {
                 errorList = "";
 
             for (var i = 0; i < fieldErrorsLength; i++) {
-                errorList += "<li class='item error'>Field: '" + fieldErrors[i].field +
+                errorList += "<li class='item error bar bar-assertive'>Field: '" + fieldErrors[i].field +
                              "' is invalid - " + fieldErrors[i].message + "</li>";
             }
 
