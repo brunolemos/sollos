@@ -20,11 +20,15 @@ body {
 
 #productList .remove {
 	position: absolute;
-	top: -8px;
-	right: -8px;
+	top: -14px;
+	right: -14px;
 	font-size: 200%;
 	z-index: 10;
+	padding: 4px 8px;
 	color: #333;
+	border-radius: 14px;
+	border: 1px solid #ddd;
+	cursor: pointer;
 }
 
 #newproduct .description {
