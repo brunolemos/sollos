@@ -1,4 +1,4 @@
-var product;
+product = {};
 
 Template.BuyProductTemplate.events({
 	'submit form': function(e, template) {
@@ -63,6 +63,8 @@ function simplifyResponseHandler(data) {
         
         // Submit the form to the server
         // $paymentForm.get(0).submit();
-        Meteor.call('buyProduct', data, product);
+        Meteor.call('buyProduct', Meteor.userId(), data, product);
+
+        Router.go('payment.success');
     }
 }
