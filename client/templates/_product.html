@@ -3,25 +3,16 @@
 
 		<ul id="productList">
 			{{#each products}}
-			<li>
-				<div class="list card">
-					<a href="{{pathFor 'product.show'}}">
-						<div class="item item-avatar">
-							<img src="/img/{{image}}">
-							<h2>{{name}}</h2>
-							<p>R${{formatPrice price}}</p>
-						</div>
-					</a>
+			<li class="ball">
+				<a href="{{pathFor 'product.show'}}">
+					<img src="/img/{{image}}">
+					<p class="name">{{name}}</p>
+					<p class="price">R${{formatPrice price}}</p>
+				</a>
 
-					<a class="item item-icon-left assertive" href="{{pathFor 'product.buy'}}">
-						<i class="icon ion-social-usd"></i>
-						<span>Comprar</span>
-					</a>
-
-					{{#if canRemoveProduct this}}
-					<a href="#" class="remove ion ion-ios-trash"></a>
-					{{/if}}
-				</div>
+				{{#if canRemoveProduct this}}
+				<a href="#" class="remove ion ion-ios-trash"></a>
+				{{/if}}
 			</li>
 			{{/each}}
 		</ul>

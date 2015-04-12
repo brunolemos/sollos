@@ -13,15 +13,49 @@ body {
 	padding: 40px 0;
 }
 
-#productList .list {
+#product .inFlames {
+	color: #FF6600;
+	font-size: 120%;
+}
+
+#productList .ball {
 	overflow: visible;
 	position: relative;
+	text-align: center;
+	display: inline-block;
+	width: 32%;
+}
+
+#productList .ball a {
+	text-decoration: none;
+}
+
+#productList .ball img {
+	width: 80%;
+	border-radius: 100px;
+	overflow: hidden;
+	padding-top: 20px;
+}
+
+#productList .ball p {
+	margin: 5px 0;
+}
+
+#productList .ball .name {
+	font-size: 120%;
+	font-weight: bold;
+	color: #333;
+}
+
+#productList .ball .price {
+	font-size: 80%;
+	color: #666;
 }
 
 #productList .remove {
 	position: absolute;
-	top: -14px;
-	right: -14px;
+	top: 10px;
+	right: 10px;
 	font-size: 200%;
 	z-index: 10;
 	padding: 4px 8px;
@@ -29,6 +63,7 @@ body {
 	border-radius: 14px;
 	border: 1px solid #ddd;
 	cursor: pointer;
+	background-color: white;
 }
 
 #newproduct .description {
